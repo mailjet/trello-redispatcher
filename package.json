@@ -1,7 +1,7 @@
 {
-  "name": "trello-dispatcher",
+  "name": "trello-redispatcher",
   "version": "1.0.0",
-  "description": "Dispatches Trello cards from one board to others",
+  "description": "Dispatches Trello cards from one board to many others",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src/index.js -o ./lib/index.js",
@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://arnaud@bitbucket.mailjet.com/scm/devrel/trello-dispatcher.git"
+    "url": "https://github.com/mailjet/trello-redispatcher.git"
   },
-  "author": "",
+  "author": "Arnaud Breton <arnaud@mailjet.com",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.6.5",
