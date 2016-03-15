@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Dispatches Trello cards from one board to many others",
   "main": "lib/index.js",
+  "bin": "lib/",
   "scripts": {
     "build": "babel src/index.js -o ./lib/index.js",
     "start": "node lib/index",
