@@ -2,8 +2,9 @@
   "name": "trello-dispatcher",
   "version": "1.0.0",
   "description": "Dispatches Trello cards from one board to others",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel index.js -o ./lib/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
