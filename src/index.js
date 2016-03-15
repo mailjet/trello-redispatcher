@@ -1,6 +1,6 @@
 import Trello from "node-trello"
 import Debug from 'debug'
-import config from '../config.json'
+import config from '../config.dist.json'
 
 const debug = Debug('trello-dispatch')
 debug("config", config)
