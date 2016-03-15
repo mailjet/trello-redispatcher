@@ -26,19 +26,20 @@ const moveCard = (card) => {
 		getDestinationBoard(label.name.toLowerCase().trim())
 			.then(boardID => {
 				debug(`Moving ${card.id} with label ${label.name} to board ${boardID}`)
-				t.put(`/1/cards/${card.id}/idBoard`, { value: boardID }, (err, data) => { 
-					console.log("Moved?", err, data) 
+				t.put(`/1/cards/${card.id}/idBoard`, { value: boardID }, (err, data) => {
+					console.log("Moved?", err, data)
 				}, error => debug(error))
 			})
 	})
 }
+
 const listCards = () => {
-      return new Promise((resolve, reject) => {
-	t.get(`/1/boards/${config.origin_board_id}/cards`, (err, data) => {
-		if (err) reject(err)
-		else resolve(data)	
+	return new Promise((resolve, reject) => {
+		t.get(`/1/boards/${config.origin_board_id}/cards`, (err, data) => {
+			if (err) reject(err)
+			else resolve(data)
+		})
 	})
-      })
 }
 
 listCards()
