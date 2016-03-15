@@ -2,7 +2,7 @@ import Trello from "node-trello"
 import Debug from 'debug'
 import config from '../config.json'
 
-const debug = Debug('trello-dispatch')
+const debug = Debug('trello-redispatcher')
 debug("config", config)
 
 const labelsMapping = config.labels_mapping
