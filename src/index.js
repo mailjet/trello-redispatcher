@@ -1,16 +1,12 @@
 import Trello from "node-trello"
-import Debug from 'debug'
 import config from '../config.json'
-
-const debug = Debug('trello-redispatcher')
-debug("config", config)
 
 const labelsMapping = config.labels_mapping
 const t = new Trello(config.api_key, config.api_token)
 
 const getDestinationBoard = (labelName) => {
 	return new Promise((resolve, reject) => {
-		debug("Moving label", labelName, "to board", labelsMapping[labelName])
+		console.log("Moving label", labelName, "to board", labelsMapping[labelName])
 		if (labelMapping[labelName]) {
 			resolve(labelMapping[labelName])
 		}
@@ -25,10 +21,10 @@ const moveCard = (card) => {
 	card.labels.map(label => {
 		getDestinationBoard(label.name.toLowerCase().trim())
 			.then(boardID => {
-				debug(`Moving ${card.id} with label ${label.name} to board ${boardID}`)
+				console.log(`Moving ${card.id} with label ${label.name} to board ${boardID}`)
 				t.put(`/1/cards/${card.id}/idBoard`, { value: boardID }, (err, data) => {
-					console.log("Moved?", err, data)
-				}, error => debug(error))
+					console.log("Moved", data)
+				}, error => console.error(error))
 			})
 	})
 }
