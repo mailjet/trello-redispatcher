@@ -8,7 +8,7 @@ It's based on the cards' labels to map to the destination board.
 Clone this repository, edit the `config.json` file (see usage below), run the following commands and get a coffee:
 ```
 $ npm install
-$ DEBUG=trello-redispatcher npm start 
+$ npm start 
 ```
 
 # Usage
